@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["contato.cattani@gmail.com"]
   spec.summary       = %q{English to doge translations}
   spec.description   = %q{Convert everday boring English into doge.}
-  spec.homepage      = ""
+  spec.homepage      = "https://rubygems.org/gems/dogert"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
