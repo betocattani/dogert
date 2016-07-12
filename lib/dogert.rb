@@ -2,32 +2,32 @@ require "dogert/version"
 require "engtagger"
 
 class Dogert
-	ADJECTIVES = %w{so such very much many}.freeze
+  ADJECTIVES = %w{so such very much many}.freeze
 
-	def initialize
-		@tagger = EngTagger.new
-	end
+  def initialize
+    @tagger = EngTagger.new
+  end
 
-	def process(str)
-		# Convert input to lowercase.
-		str = str.downcase
+  def process(str)
+    # Convert input to lowercase.
+    str = str.downcase
 
-		# Extract nouns, prefixing each with one of the
+    # Extract nouns, prefixing each with one of the
     # above adjectives into sentences of 2 words.
-		tagged_str = @tagger.add_tags(str)
-		phrases = @tagger.get_nouns(tagged_str).keys
-		phrases = phrases.each_with_index.map do |phrase, i|
-			"#{adjective(i)} #{phrase}."
-		end
+    tagged_str = @tagger.add_tags(str)
+    phrases = @tagger.get_nouns(tagged_str).keys
+    phrases = phrases.each_with_index.map do |phrase, i|
+      "#{adjective(i)} #{phrase}."
+    end
 
-		# End every input with "wow."
-		phrases << "wow."
+    # End every input with "wow."
+    phrases << "wow."
+    phrases.join(' ')
+  end
 
-		phrases.join(' ')
-	end
-
-	private 
-	def adjective(i)
-		ADJECTIVES[i % ADJECTIVES.size]
-	end
+  private
+    def adjective(i)
+      ADJECTIVES[i % ADJECTIVES.size]
+    end
+  end
 end
