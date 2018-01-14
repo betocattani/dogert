@@ -1,24 +1,31 @@
 # Dogert
 
-TODO: Write a gem description
+![alt text](doge.png 'Doge')
+
+Is an Internet meme that became popular in 2013. The meme typically consists of a picture of a Shiba Inu accompanied by multicolored text in Comic Sans font in the foreground. The text, representing a kind of internal monologue, is deliberately written in a form of broken English.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
+```rb
   gem 'dogert'
+```
 
 And then execute:
-
+```rb
   $ bundle
-
+```
 Or install it yourself as:
-
+```rb
   $ gem install dogert
-
+```
 ## Usage
 
-TODO: Write usage instructions here
+```rb
+$ Dogert.new.process('pay me a beer')
+=> "so pay. such beer. wow."
+```
 
 ## Contributing
 
