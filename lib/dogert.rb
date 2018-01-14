@@ -9,11 +9,10 @@ class Dogert
   end
 
   def process(str)
-    # Convert input to lowercase.
     str = str.downcase
 
-    # Extract nouns, prefixing each with one of the
-    # above adjectives into sentences of 2 words.
+    # Extract nouns, prefixing each with one of the above adjectives into
+    # sentences of 2 words.
     tagged_str = @tagger.add_tags(str)
     phrases = @tagger.get_nouns(tagged_str).keys
     phrases = phrases.each_with_index.map do |phrase, i|
@@ -26,8 +25,8 @@ class Dogert
   end
 
   private
-    def adjective(i)
-      ADJECTIVES[i % ADJECTIVES.size]
-    end
+
+  def adjective(i)
+    ADJECTIVES[i % ADJECTIVES.size]
   end
 end

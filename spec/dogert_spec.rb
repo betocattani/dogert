@@ -12,9 +12,9 @@ describe Dogert do
     end
 
     it 'combines nouns with doge adjectives' do
-      expect(output).to match /so gramdmom\./i
-      expect(output).to match /such sweater\./i
-      expect(output).to match /very christmas\./i
+      expect(output).to match('so gramdmom')
+      expect(output).to match('such sweater')
+      expect(output).to match('very christmas')
     end
 
     it 'always appends "wow."' do
